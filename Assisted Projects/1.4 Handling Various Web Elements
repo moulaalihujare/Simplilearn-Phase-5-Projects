@@ -1,0 +1,170 @@
+1.4 Handling Various Web Elements
+cheakbox
+package com.Day2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class chechbox {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// WebDriver
+		
+				// can open a chrome browser window
+				
+				WebDriver driver = new  ChromeDriver();
+				
+				//to maximize the window
+				driver.manage().window().maximize();
+				driver.get("https://www.ironspider.ca/forms/checkradio.htm");
+				//  Thread.sleep(2000);
+			        
+			        driver.findElement(By.xpath("(//*[contains(@name,'color')])[3]")).click();
+			driver.findElement(By.xpath("//*[contains(@value,'blue')]")).click();
+	//is selected
+	}
+}
+Dropdowndemo:
+package com.Day2;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Dropdowndemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new  ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.ironspider.ca/forms/dropdowns.htm");
+		//find the dropdown
+		
+	}
+
+}
+Linkdemo
+package com.qa.SeleniumScripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LinksDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.wikipedia.org/");
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().deleteAllCookies();
+		
+		driver.findElement(By.xpath("//*[@id='searchInput']")).sendKeys("Testing");
+		
+		driver.findElement(By.cssSelector("button[type=submit]")).click();
+		
+		// click on the link
+		
+	WebElement li=	driver.findElement(By.linkText("Current events"));
+
+	li.isDisplayed();
+	li.isEnabled();
+	li.click();
+	
+	
+	driver.findElement(By.partialLinkText("Log")).click();
+	
+	
+	driver.close();
+	
+	
+	//driver.findElement(By.linkText("Create a Web Page 101")).click();
+	
+	//driver.findElement(By.partialLinkText("What exactly is ")).click()
+	
+	}
+  }
+///framesdemo///
+package com.qa.Scripts.Day3;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FramesDemo {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		
+	WebDriver driver = new ChromeDriver();
+	
+	driver.manage().window().maximize();
+	
+	driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
+	
+	// 1. Frames : you will always, switch to the freame, find the element and click on it
+	
+	// name of frame where element is present : packageListFrame
+	
+	driver.switchTo().frame("packageListFrame"); // find name of frame form html document
+	
+	Thread.sleep(2000);
+	
+	// Inpect the first link and click on it
+	
+	driver.findElement(By.linkText("org.openqa.selenium")).click();
+	
+	
+	driver.switchTo().parentFrame();
+	
+	
+	driver.switchTo().frame("classFrame");
+	
+	// Inspect the second link and click on it
+	
+	driver.findElement(By.linkText("org.openqa.selenium.chromium")).click();
+	
+
+	}
+
+}
+radio button-----------------
+package com.Day2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Radiobutdemo {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new  ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.ironspider.ca/forms/checkradio.htm");
+		WebElement e1 = driver.findElement(By.xpath("//*[contains(@name,'browser')][3]"));
+		
+		boolean sel= e1.isSelected(); // false
+		         
+		         System.out.println(sel);
+		
+		 if(sel!=true)
+		         {
+		             e1.click();
+		         }
+	}
+
+}
+
+
+
+
+

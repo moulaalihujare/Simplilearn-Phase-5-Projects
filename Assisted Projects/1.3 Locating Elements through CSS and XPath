@@ -1,0 +1,59 @@
+package phase5L1;
+
+public class LocatingElementsthroughCSSandXPath {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	// TODO Auto-generated method stub
+		
+        WebDriver driver = new ChromeDriver();
+        
+        driver.manage().window().maximize();
+		
+		driver.get("https://signup.heroku.com/");
+		
+		// 1. find element using tag and id ==> tagname#idvalue
+		
+		driver.findElement(By.cssSelector("input#first_name")).sendKeys("neha");
+		
+		//driver.findElement(By.cssSelector("input.required")).sendKeys("bagal");
+		
+        driver.findElement(By.cssSelector("input[name=last_name]")).sendKeys("bagal");
+	}
+
+}
+//////////////////////for xpath/////////////////////////////
+package com.qa.SeleniumScripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RediffDemo {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("http://register.rediff.com/register/register.php?FormName=user_details");
+		
+	//	driver.findElements(By.xpath("//input[@type='text']")).get(0).sendKeys("neha");
+		
+	driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys("neha bagal");
+	Thread.sleep(2000);
+	
+	driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("admin123");
+	Thread.sleep(2000);
+	
+	driver.findElement(By.xpath("(//input[@type='button'])[1]")).click();
+	Thread.sleep(2000);
+	
+	driver.findElement(By.xpath("(//input[@type='password'])[1]")).sendKeys("password@123");
+
+	}
+
+}

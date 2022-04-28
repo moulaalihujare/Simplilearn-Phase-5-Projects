@@ -1,0 +1,24 @@
+3.1 Launch and Connect to an EC2 Linux Instance
+●	Go to Amazon dashboard
+●	Select EC2
+●	Click on launch instance to run any instance
+●	Select the AMI 
+●	Select t2.micro as the instance type
+●	Specify the number of instances, networks, placement groups, and IAM roles and click Next
+●	There is one volume attached to the instance by default
+●	 In Linux, the default volume attached is 8 GB 
+●	You can add more volume if required
+●	You can add a key-value pair to the instance
+●	Attach the three policy groups depending on the type of access required
+●	Select an existing key-value pair to launch the instance
+●	The instance is ready to use
+●	Click on Connect on EC2 dashboard
+●	 Run the ssh command provided
+Connecting to an EC2 instance
+●	Run the following command to launch a website over EC2:
+ yum install httpd -y
+●	Navigate to /var/www/html and create index.html file using command 
+vi index.html
+●	Enter I and start creating HTML file content
+●	Once done, type :wq!
+●	Using public IP of EC2 instance, you can see your app running on the browser
